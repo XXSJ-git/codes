@@ -1,0 +1,11 @@
+server:
+  port: 8761 #注册中心默认端口
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka #指定注册中心地址
+    fetch-registry: false #关闭立即注册，只不过是启动是不注册
+    register-with-eureka: false #当前只单纯的作为服务的注册中心
+spring:
+  application:
+    name: EUREKASERVER #服务名不要有下划线且不能重复，不区分大小写，推荐使用大写

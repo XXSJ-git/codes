@@ -1,0 +1,9 @@
+server:
+  port: 9900
+spring:
+  application:
+    name: USER9900
+  cloud:
+    consul:
+      port: 8500
+      host: localhost

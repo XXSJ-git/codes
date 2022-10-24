@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: CONSULCLIENT
+  cloud:
+    consul:
+      port: 8500  #注册consul主机的端口号
+      discovery:
+        register-health-check: false   #关闭consul服务的健康检查（不推荐）
+        service-name: ${spring.application.name} #指定服务的名称
+server:
+  port: 8081

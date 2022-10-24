@@ -1,0 +1,9 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: PRODUCT
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
