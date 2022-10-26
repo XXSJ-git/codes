@@ -17,6 +17,9 @@
         <module>springcloud_06_ribbon_user</module>
         <module>springcloud_07_openfeign_category</module>
         <module>springcloud_08_openfeign_product</module>
+        <module>springcloud_09_hystrix</module>
+        <module>springcloud_10_hystrix_product</module>
+        <module>springcloud_11_gateway</module>
     </modules>
 
     <!--继承springboot父项目-->
@@ -36,6 +39,13 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <!--热加载-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
         <!--谷歌格式化-->
         <dependency>
@@ -63,5 +73,17 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <!--热加载maven插件-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

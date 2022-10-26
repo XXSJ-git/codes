@@ -1,7 +1,7 @@
 package com.haha.controller;
 
 import com.google.gson.Gson;
-import com.haha.controller.entity.UserVO;
+import com.haha.entity.UserVO;
 import com.haha.feignclient.ProductClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,5 +43,10 @@ public class CategoryController {
         userVO.setAge("12");
         Map<String, Object> stringObjectMap = productClient.test3(userVO);
         return new Gson().toJson(stringObjectMap);
+    }
+    @GetMapping("/category/test1")
+    public String categoryTest(){
+        log.info("category  server =============");
+        return "category  OK！！！";
     }
 }

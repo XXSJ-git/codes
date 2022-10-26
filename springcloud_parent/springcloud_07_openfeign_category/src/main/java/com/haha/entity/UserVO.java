@@ -1,4 +1,4 @@
-package com.haha.controller.entity;
+package com.haha.entity;
 
 import lombok.Data;
 

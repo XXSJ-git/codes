@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    consul:
+      port: 8500
+      host: localhost
+    gateway:
+      routes:
+        - id: product   # 指定路由唯一标识
+          #uri: http://localhost:9010  # 指定路由服务的地址
+          uri: lb://PRODUCT  # lb(loadbalance)代表负载均衡转发路由 后面跟着服务名
+          predicates:
+            - Path=/product/** # 指定路由规则
+
+        - id: category   # 指定路由唯一标识
+          #uri: http://localhost:9011  # 指定路由服务的地址
+          uri: lb://CATEGORY          # lb(loadbalance)代表负载均衡转发路由
+          predicates:       # 指定路由规则 断言：满足条件通过，不满足就立即返回
+            - Path=/category/**,/list  #路径断言
+#            - After=2020-07-21T11:33:33.993+08:00[Asia/Shanghai]  			`指定日期之后的请求进行路由
+#            - Before=2020-07-21T11:33:33.993+08:00[Asia/Shanghai]       `指定日期之前的请求进行路由
+#            - Between=2017-01-20T17:42:47.789-07:00[America/Denver], 2017-01-21T17:42:47.789-07:00[America/Denver]
+#            - Cookie=username,chenyn																		`基于指定cookie的请求进行路由
+#            - Cookie=username,[A-Za-z0-9]+															`基于指定cookie的请求进行路由
+#              `curl http://localhost:8989/user/findAll --cookie "username=zhangsna"
+#            - Header=X-Request-Id, \d+																 ``基于请求头中的指定属性的正则匹配路由(这里全是整数)
+#              `curl http://localhost:8989/user/findAll -H "X-Request-Id:11"
+#            - Method=GET,POST																						 `基于指定的请求方式请求进行路由
+          filter:  #过滤：当请求满足断言的所有系件之后,会向后端服务转发,在向后端服务转发之前会经过一些过滤
+            - AddRequestHeader=X-Request-red, blue						#用来给路由对象的所有转发请求加入指定请求头信息
+#            - AddRequestParameter=red, blue							#用来给路由对察的所有较发请求加入指定请求套数
+#            - AddResponseHeader=X-Response-Red, AAA					#用来给路由对察的所有转发请求的响应加入指定头信息
+#            - PrefixPath=/emp											#用来給路由对象的所有较发诸求的u1加入指定前缀信息
+#            - StripPrefix=2											#用来给路田对象的所有装发请求的u1大掉指定2个前绥
+
+# gateway提供路由访问规则列表的web界面,但是默认是关闭的,如果想要查看服务路由规则可以在配置文件中开启
+#- 访问路由管理列表地址
+#- http://localhost:9797/actuator/gateway/routes
+server:
+  port: 9797
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

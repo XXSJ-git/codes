@@ -1,6 +1,6 @@
 package com.haha.feignclient;
 
-import com.haha.controller.entity.UserVO;
+import com.haha.entity.UserVO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.Map;
  * @author: xxsj
  * @date: 2022-10-23 22:56
  **/
-@FeignClient(value = "PRODUCT")//表示需要调用的服务毛
+@FeignClient(value = "PRODUCT")//表示需要调用的服务名
 public interface ProductClient {
 
     @GetMapping("/product") //表示需要调用接口的类型已经路径
