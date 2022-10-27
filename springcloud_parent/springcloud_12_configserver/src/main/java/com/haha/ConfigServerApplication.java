@@ -6,14 +6,14 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @program: codes
- * @description: consul客户端
+ * @description:
  * @author: xxsj
- * @date: 2022-10-10 22:20
+ * @date: 2022-10-26 15:29
  **/
 @SpringBootApplication
-@EnableDiscoveryClient //通用服务注册注解 添加consul之后默认已经加了，这里可以不加这个注解
-public class ConsulClientApplication {
+@EnableDiscoveryClient
+public class ConfigServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ConsulClientApplication.class,args);
+        SpringApplication.run(ConfigServerApplication.class, args);
     }
 }

@@ -20,12 +20,14 @@
         <module>springcloud_09_hystrix</module>
         <module>springcloud_10_hystrix_product</module>
         <module>springcloud_11_gateway</module>
+        <module>springcloud_12_configserver</module>
+        <module>springcloud_13_configclient</module>
     </modules>
 
     <!--继承springboot父项目-->
     <parent>
-        <artifactId>spring-boot-dependencies</artifactId>
         <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
         <version>2.2.5.RELEASE</version>
     </parent>
     <!--自定义properties属性-->

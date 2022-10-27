@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: CONFIGSERVER
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+    config:
+      server:
+        git:
+          uri: https://github.com/XXSJ-git/codes.git
+          default-label: config
+server:
+  port: 9999
