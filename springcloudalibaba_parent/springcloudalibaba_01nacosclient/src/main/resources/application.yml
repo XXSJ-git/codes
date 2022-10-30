@@ -1,0 +1,17 @@
+server:
+  port: 9300
+spring:
+  application:
+    name: NACOSCLIENT
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr} #指定注册中心地址
+        service: ${spring.application.name}
+      server-addr: http://39.101.133.83:8848 #指定nacos服务地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有web端点

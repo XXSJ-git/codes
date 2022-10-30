@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: SENTINEL
+  cloud:
+    nacos:
+      server-addr: http://39.101.133.83:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}  #指定注册中心地址
+    sentinel:
+      enabled: true  # 开启sentinel 默认开启
+      transport:
+        dashboard: http://localhost:9191   # 连接sentinel dashboard
+        port: 8719  # 指定sentinel组件与sentinel dashboard组件通信地址
+server:
+  port: 9123

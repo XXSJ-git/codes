@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: config
+  profiles:
+    active: prod
+  cloud:
+    nacos:
+      server-addr: http://39.101.133.83:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr} #指定注册中心地址
+      config:
+        server-addr: ${spring.cloud.nacos.server-addr} #指定配置中心地址
+        file-extension: yml #默认读取的是配置中心文件类型为properties的文件，如果像读取其他格式需要在此处指定
+        group: CONFIG
+        # 配置命名空间，此处写的是 命名空间的id 的值，默认是 public 命名空间
+        # namespace:
+        # data-id 的前缀,默认就是 spring.application.name 的值
+        prefix: ${spring.application.name}
+        namespace: 3694ed8b-45d5-41f3-b55a-71afd8fbc12a #命名空间，值需要使用他的id
+# data-id = ${prefix}-${spring.profile.active}.${file-extension}
+#        当多个时下方的优先级更高，extension的优先级比shared的优先级高
+#        extension-configs[0]:
+#          - data-id: redis-extension.yml # 配置文件的名字，后缀不能省
+#            # 配置文件所属的组
+#            group: DEFAULT_GROUP
+#            # 配置自动刷新
+#            refresh: true
+#        # 存在多个 data-id 的时候，后方的data-id 中配置的属性优先级更高
+#        shared-configs[0]:
+#          - data-id: redis-shared.yaml
+#            group: DEFAULT_GROUP
+#            refresh: true

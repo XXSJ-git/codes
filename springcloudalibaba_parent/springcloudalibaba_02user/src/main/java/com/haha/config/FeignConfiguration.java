@@ -1,11 +1,13 @@
 package com.haha.config;
 
+import com.netflix.loadbalancer.AvailabilityFilteringRule;
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * @program: codes
+ * @description: openFeign负载均衡配置
  * @program: codes
  * @description: 通过代码的形式 配置openfeign负载均衡
  *     1、 RoundRobinRule
@@ -19,16 +21,16 @@ import org.springframework.context.annotation.Configuration;
  * 　　5、AvailabilityFilteringRule
  *        可用过滤算法：该算法规则是过滤掉处于熔断状态的 server 与已经超过连接极限的server，对剩余 server 采用轮询策略。
  * @author: xxsj
- * @date: 2022-10-25 16:07
+ * @date: 2022-10-27 19:10
  **/
 @Configuration
 public class FeignConfiguration {
     /**
-     * 配置随机的负载均衡策略
+     * 配置可用过滤算法的负载均衡策略
      * 特点：对所有的服务都生效
      */
     @Bean
     public IRule loadBalancedRule() {
-        return new RandomRule();
+        return new AvailabilityFilteringRule();
     }
 }
