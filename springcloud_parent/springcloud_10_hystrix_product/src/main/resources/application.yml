@@ -3,3 +3,6 @@ spring:
     name: HYSTRIX_PRODUCT
 server:
   port: 9002
+feign:
+  hystrix:
+    enabled: true #开启openfeign支持降级,默认没有开启
