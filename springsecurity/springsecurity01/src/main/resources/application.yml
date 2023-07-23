@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.101.133.83:3939/springsecurity?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: p17671735420.
+  redis:
+    port: 6666
+    host: 39.101.133.83
+    password: p17671735420.
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #配置日志
+  type-aliases-package: com.haha.project #实体类所在包，允许用实体类类名作为别名
+  mapper-locations: classpath:mapping/*.xml #链接 mapper文件
