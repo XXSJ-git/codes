@@ -10,6 +10,7 @@
         <module name="xxl-job-core" />
         <module name="springcloud_03_consul_client" />
         <module name="seckill" />
+        <module name="design_pattern" />
         <module name="springcloudalibaba_01nacosclient" />
         <module name="springcloud_11_gateway" />
         <module name="generator" />
@@ -22,7 +23,6 @@
         <module name="xxl-job-admin" />
         <module name="springcloudalibaba_04configclient" />
         <module name="springcloud_02_eureka_client" />
-        <module name="factory_pattern" />
         <module name="springcloudalibaba_02user" />
         <module name="xxl-job-executor-sample-frameless" />
         <module name="springcloudalibaba_03products" />
@@ -36,6 +36,15 @@
         <module name="springsecurity01" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="factory_pattern" target="1.8" />
+      <module name="xxl-job" target="1.8" />
+      <module name="xxl-job-admin" target="1.8" />
+      <module name="xxl-job-core" target="1.8" />
+      <module name="xxl-job-executor-sample-frameless" target="1.8" />
+      <module name="xxl-job-executor-sample-springboot" target="1.8" />
+      <module name="xxl-job-executor-samples" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
