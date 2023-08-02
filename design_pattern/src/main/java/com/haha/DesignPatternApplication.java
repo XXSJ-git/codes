@@ -1,4 +1,4 @@
-package com.haha.design_pattern;
+package com.haha;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
