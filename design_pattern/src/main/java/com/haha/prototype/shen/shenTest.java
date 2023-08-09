@@ -19,14 +19,14 @@ public class shenTest {
 
         //创建对象输出量
         ObjectOutputStream oos
-                = new ObjectOutputStream(new FileOutputStream("/Users/xxsj/Documents/lx/codes/design_pattern/src/main/resources/a.txt"));
+                = new ObjectOutputStream(new FileOutputStream("/Users/xxsj/Documents/lx/codes/design_pattern/src/main/resources/document/a.txt"));
         oos.writeObject(citation);
         //释放资源
         oos.close();
 
         //创建对象输入流
         ObjectInputStream ois
-                = new ObjectInputStream(new FileInputStream("/Users/xxsj/Documents/lx/codes/design_pattern/src/main/resources/a.txt"));
+                = new ObjectInputStream(new FileInputStream("/Users/xxsj/Documents/lx/codes/design_pattern/src/main/resources/document/a.txt"));
         Citation citation1 = (Citation) ois.readObject();
         //释放资源
         ois.close();
