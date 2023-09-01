@@ -12,7 +12,7 @@ public class SDAdapterTF extends TFCardImpl implements SDCard{
     @Override
     public String readSD() {
         System.out.println("将sd的数据转换为tf读取！");
-        return readTF();
+        return readTF();//这里时调用TFCardImpl的方法
     }
 
     @Override

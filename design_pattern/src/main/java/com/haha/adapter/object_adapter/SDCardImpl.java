@@ -3,7 +3,7 @@ package com.haha.adapter.object_adapter;
 /**
  * @author 鑫星世界
  * @version 1.0.0
- * @description: 适配者实现类
+ * @description: 目标接口的实现类
  * @ClassName SDCardImpl.java
  * @createTime 2023年08月31日 23:48
  */
